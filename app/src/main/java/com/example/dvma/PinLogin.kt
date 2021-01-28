@@ -41,19 +41,19 @@ class PinLogin : AppCompatActivity() {
     fun encrypt(input : String, salt : ByteArray) : String {
         var digest : String = ""
         try {
-            var md : MessageDigest = MessageDigest.getInstance("SHA-512")
+            val md : MessageDigest = MessageDigest.getInstance("SHA-512")
             md.update(salt)
 
             //toByteArray defaults to UTF-8
-            var str : ByteArray = md.digest(input.toByteArray())
+            val str : ByteArray = md.digest(input.toByteArray())
 
-            var sb : StringBuilder = StringBuilder()
+            val sb : StringBuilder = StringBuilder()
 
             for (i in 0 until str.size) {
                 sb.append(Integer.toString((str.get(i).and(0xff.toByte())).or(0x100.toByte()).toInt(), 16).substring(1))
             }
 
-            var result : String = sb.toString()
+            val result : String = sb.toString()
 
             return result
         }
@@ -64,8 +64,8 @@ class PinLogin : AppCompatActivity() {
     }
 
     fun getSalt() : ByteArray {
-        var rnd : SecureRandom = SecureRandom()
-        var salt : ByteArray = ByteArray(16)
+        val rnd : SecureRandom = SecureRandom()
+        val salt : ByteArray = ByteArray(16)
 
         rnd.nextBytes(salt)
         return salt
