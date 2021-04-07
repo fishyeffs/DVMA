@@ -41,7 +41,7 @@ The hash of the PIN is stored without a salt.
 There is a logic problem within the code, check PinLogin.kt in the source code and go to line 36. This conditional checks that there is an existence of the pin.txt file, meaning if the file does not exist, it writes a randomly generated PIN to _pin.txt_. This vulnerability is more of a puzzle, with one clue given earlier (i.e. the PIN being randomly generated when you click the login button), and you will likely never see something like this in the wild.
 
 
-[insecure data storage] = https://www.appknox.com/blog/understanding-owasp-top-10-mobile-insecure-data-storage
-[this] = https://twelvesec.com/2015/04/14/app-security-101-top-10-vulnerabilities/
+[insecure data storage]: https://www.appknox.com/blog/understanding-owasp-top-10-mobile-insecure-data-storage
+[this]: https://twelvesec.com/2015/04/14/app-security-101-top-10-vulnerabilities/
 
 
