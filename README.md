@@ -9,6 +9,7 @@ To get started with mobile application security you will need a few tools. Below
 * Android Studio (with Android Debug Bridge)
 * A Hypervisor (VMware, VirtualBox, etc.)
 * An Android device/emulator
+* Basic programming skills
 
 ## Things you will need specific to this app:
 * The dvma.apk file
