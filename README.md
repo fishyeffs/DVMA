@@ -26,7 +26,7 @@ The app is not communicating with any outside source to validate the PIN code.
 The answer is hidden in the cache.
 
 ### Hint 3:
-The hash brown has a distinct lack of flavour!
+The hash has a distinct lack of flavour!
 
 ### Answer:
 Since the PIN is randomly generated, you have to exploit/solve this problem first. There is a file located in data/data/com.example.dvma/ that is called pin.txt. It stores a hash of the PIN. This storage method is an example of [insecure data storage]. While the PIN has been hashed, there are a tiny amount of combinations available (it's a 4 digit PIN) if you have any sort of automation technique available. Your challenge is to either create a program that inputs all 9999 possibilities into the app, or to take the hash outside of the app and brute force it in any other method. 
