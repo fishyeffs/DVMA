@@ -39,7 +39,7 @@ There is a limited number of PIN combinations. Create a program that loops throu
 The hash of the PIN is stored without a salt.
 
 #### Vulnerability 3:
-There is a logic problem within the code, check PinLogin.kt in the source code and go to line 36. This conditional checks that there is an existence of the pin.txt file, meaning if the file does not exist, it writes a randomly generated PIN to _pin.txt_. This vulnerability is more of a puzzle, with one clue given earlier (i.e. the PIN being randomly generated when you click the login button), and you will likely never see something like this in the wild.
+There is a logic problem within the code, check PinLogin.kt in the source code and go to line 36. This conditional checks that there is an existence of the pin.txt file, meaning if the file does not exist, it writes a randomly generated PIN to _pin.txt_. This vulnerability is more of a puzzle, with one clue given earlier (i.e. the PIN being randomly generated when you click the login button), and you will likely never see something like this in the wild. If you create your own _pin.txt_ file in the correct location, you can create your own PIN, hash it with the MD5 hashing algorithm and then write it to the file. 
 
 
 [insecure data storage]: https://www.appknox.com/blog/understanding-owasp-top-10-mobile-insecure-data-storage
