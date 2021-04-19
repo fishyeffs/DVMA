@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 class MainActivity : AppCompatActivity() {
 
     lateinit var recyclerView : RecyclerView
+    //"/data/data/com.example.dvma/shared_prefs
 
     //var names = resources.getStringArray(R.array.contacts)
     //var msg = resources.getStringArray(R.array.msg_beginning)
