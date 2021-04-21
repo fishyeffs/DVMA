@@ -26,6 +26,8 @@ class PinLogin : AppCompatActivity() {
         val inputPIN = findViewById<EditText>(R.id.editTextPIN)
         val hashTxt = findViewById<TextView>(R.id.hash)
 
+        //if the pin file doesn't exist, encrypt a random 4 digit number and write it
+        //to the file
         if (!File(sourcePath).exists()) {
             var random = Random()
             var pin : String = String.format("%04d", random.nextInt(10000))
@@ -34,7 +36,7 @@ class PinLogin : AppCompatActivity() {
             writePIN(hash)
         }
 
-        //works once
+
         login.setOnClickListener {
             val PIN = inputPIN.text.toString()
 
@@ -52,6 +54,8 @@ class PinLogin : AppCompatActivity() {
             }
         }
 
+        //this just makes sure that when a pin is entered the enter button on the keyboard calls the onclick function
+        //and doesn't minimise the keyboard
         inputPIN.setOnEditorActionListener(OnEditorActionListener { textView, actionId, event ->
             if (event != null && event.keyCode == KeyEvent.KEYCODE_ENTER || actionId == EditorInfo.IME_ACTION_DONE) {
                 login.callOnClick()
@@ -63,7 +67,7 @@ class PinLogin : AppCompatActivity() {
 
     private fun checkPin(hash: String): Boolean {
         val check : String = File(sourcePath).readText(Charsets.UTF_8)
-
+        //just a simple check to validate the pin
         println("Hash: $hash")
         println("Check: $check")
         return check == hash
@@ -71,12 +75,20 @@ class PinLogin : AppCompatActivity() {
 
     private fun writePIN(hash: String) {
         File(sourcePath).bufferedWriter().use { out ->
-            //out.write("\n")
             out.write(hash)
         }
     }
 
+    /**
+     * SHA-512, the algorithm used to encrypt the PIN, is typically not the type of hashing algorithm
+     * that should be used to store sensitive information such as passwords, instead, using something
+     * like bcrypt (http://bcrypt.sourceforge.net/), would be sufficient.
+     *
+     * if you're interested, google something along the lines of "SHA-512 authentication" and you should
+     * get something interesting.
+     */
     fun encrypt(input: String) : String {
+        //removed salt so that user can bruteforce pin from the raw hash
         try {
             val md : MessageDigest = MessageDigest.getInstance("SHA-512")
             //md.update(salt)
@@ -86,7 +98,9 @@ class PinLogin : AppCompatActivity() {
 
             val sb : StringBuilder = StringBuilder()
 
+            //for every character
             for (i in str.indices) {
+                //add the result of (current character byte bitwise and (1111 1111 or 1 0000 0000))
                 sb.append(
                     (str[i].and(0xff.toByte())).or(0x100.toByte()).toInt().toString(16).substring(
                         1

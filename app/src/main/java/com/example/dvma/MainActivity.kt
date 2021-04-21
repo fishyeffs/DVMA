@@ -14,15 +14,12 @@ class MainActivity : AppCompatActivity() {
     lateinit var recyclerView : RecyclerView
     //"/data/data/com.example.dvma/shared_prefs
 
-    //var names = resources.getStringArray(R.array.contacts)
-    //var msg = resources.getStringArray(R.array.msg_beginning)
-    //var img = arrayOf(Int)
-    //var profileImg = R.drawable.ic_baseline_account_circle_24
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        //populating messages list
         var names = resources.getStringArray(R.array.contacts).toMutableList()
         var msgs = resources.getStringArray(R.array.msg_beginning).toMutableList()
         recyclerView = findViewById(R.id.recycler_view)
@@ -31,12 +28,14 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        //inflate menu
         val inflater = menuInflater
         inflater.inflate(R.menu.menu_items, menu)
         return true
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean = when (item.itemId) {
+        //if menu item nav_account selected, open activity with intent
         R.id.nav_account -> {
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)

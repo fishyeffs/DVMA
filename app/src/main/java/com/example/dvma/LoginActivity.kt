@@ -18,14 +18,13 @@ class LoginActivity : AppCompatActivity() {
             //specified intended receiver is com.example.dvma
             val intent = packageManager.getLaunchIntentForPackage("com.example.dvma")
 
-            //data is sensitive and unencrypted, should be
+            //data is sensitive and unencrypted, should be encrypted/stored correctly instead
             intent?.apply {
                 putExtra("Username", uname.text.toString())
                 putExtra("Password", pass.text.toString())
             }
 
             startActivity(intent)
-            //5655
         }
     }
 }
