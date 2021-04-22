@@ -59,7 +59,6 @@ class PinLogin : AppCompatActivity() {
         inputPIN.setOnEditorActionListener(OnEditorActionListener { textView, actionId, event ->
             if (event != null && event.keyCode == KeyEvent.KEYCODE_ENTER || actionId == EditorInfo.IME_ACTION_DONE) {
                 login.callOnClick()
-                true
             }
             true
         })
