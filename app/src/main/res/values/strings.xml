@@ -2,9 +2,11 @@
     <string name="app_name">DVMA</string>
     <string-array name="contacts">
         <item>Polly</item>
+        <item>Nihal</item>
     </string-array>
     <string-array name="msg_beginning">
-        <item>Hi Polly!</item>
+        <item>Hi!</item>
+        <item>Did you like the news article I sent?</item>
     </string-array>
     <string name="title_activity_pin_login">PinLogin</string>
     <!--
