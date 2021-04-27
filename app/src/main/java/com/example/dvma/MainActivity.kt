@@ -12,12 +12,18 @@ import java.io.File
 class MainActivity : AppCompatActivity() {
 
     lateinit var recyclerView : RecyclerView
+    val PREF = "PrefLogin"
+    val USERNAME = "UsernamePref"
+    val PASSWORD = "PasswordPref"
+    val INITIALISED = "initialised"
     //"/data/data/com.example.dvma/shared_prefs
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+
 
         //populating messages list
         var names = resources.getStringArray(R.array.contacts).toMutableList()
@@ -37,8 +43,14 @@ class MainActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean = when (item.itemId) {
         //if menu item nav_account selected, open activity with intent
         R.id.nav_account -> {
-            val intent = Intent(this, LoginActivity::class.java)
-            startActivity(intent)
+            if (!getSharedPreferences(PREF, MODE_PRIVATE).getBoolean(INITIALISED, false)) {
+                val intent = Intent(this, LoginActivity::class.java)
+                startActivity(intent)
+            }
+            else {
+                val intent = Intent(this, AccountActivity::class.java)
+                startActivity(intent)
+            }
             true
         }
         else -> {

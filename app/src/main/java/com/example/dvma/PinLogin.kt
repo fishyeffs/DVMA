@@ -1,5 +1,6 @@
 package com.example.dvma
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.KeyEvent
@@ -17,6 +18,10 @@ import kotlin.experimental.or
 
 
 class PinLogin : AppCompatActivity() {
+    val PREF = "PrefLogin"
+    val INITIALISED = "initialised"
+    val USERNAME = "UsernamePref"
+    val PASSWORD = "PasswordPref"
     private val sourcePath : String = "/data/data/com.example.dvma/cache/pin.txt"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,6 +30,17 @@ class PinLogin : AppCompatActivity() {
         val login = findViewById<Button>(R.id.login)
         val inputPIN = findViewById<EditText>(R.id.editTextPIN)
         val hashTxt = findViewById<TextView>(R.id.hash)
+
+        //initialise shared prefs
+        var sharedPref = getSharedPreferences(PREF, Context.MODE_PRIVATE)
+
+        //shared prefs editor
+        var edit = sharedPref.edit()
+
+        edit.putBoolean(INITIALISED, true)
+        edit.putString(USERNAME, "micHa1l")
+        edit.putString(PASSWORD, "busterTheDog1")
+        edit.commit()
 
         //if the pin file doesn't exist, encrypt a random 4 digit number and write it
         //to the file
@@ -83,23 +99,20 @@ class PinLogin : AppCompatActivity() {
      * that should be used to store sensitive information such as passwords, instead, using something
      * like bcrypt (http://bcrypt.sourceforge.net/), would be sufficient.
      *
-     * if you're interested, google something along the lines of "SHA-512 authentication" and you should
-     * get something interesting.
+     * if you're interested, check this link out:
+     * https://security.stackexchange.com/questions/52041/is-using-sha-512-for-storing-passwords-tolerable
      */
     fun encrypt(input: String) : String {
         //removed salt so that user can bruteforce pin from the raw hash
         try {
             val md : MessageDigest = MessageDigest.getInstance("SHA-512")
-            //md.update(salt)
-
             //toByteArray defaults to UTF-8
             val str : ByteArray = md.digest(input.toByteArray())
-
             val sb : StringBuilder = StringBuilder()
 
             //for every character
             for (i in str.indices) {
-                //add the result of (current character byte bitwise and (1111 1111 or 1 0000 0000))
+                //add the result of (current character byte bitwise and 1111 1111 or 1 0000 0000)
                 sb.append(
                     (str[i].and(0xff.toByte())).or(0x100.toByte()).toInt().toString(16).substring(
                         1

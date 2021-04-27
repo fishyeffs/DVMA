@@ -13,8 +13,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".AccountActivity"></activity>
-        <activity android:name=".LoginActivity" />
+        <activity android:name=".AccountActivity"/>
+        <activity android:name=".LoginActivity" >
+            <intent-filter>
+                <action android:name="com.example.dvma.LOGIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        
         <!--
                Set to true if your app is Standalone, that is, it does not require the handheld
                app to run.
