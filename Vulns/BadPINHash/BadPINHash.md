@@ -13,6 +13,12 @@ The SHA-512 hash is used to create the value found in `/data/data/com.example.dv
 ## Task
 Create a program that goes through every PIN combination and hashes it using the SHA-512 algorithm. Compare this hash to the one found in `/data/data/com.example.dvma/cache`. You can use any programming language you want as long as it has the option to create a SHA-512 hash.  
 
+### Hint 1
+Create an iterative loop to go through all 9999 combinations.
+
+### Hint 2
+Make sure the hash function is using SHA-512.
+
 The [solution can be found here].
 
 [insufficient cryptography]: https://owasp.org/www-project-mobile-top-10/2016-risks/m5-insufficient-cryptography
