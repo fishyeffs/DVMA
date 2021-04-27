@@ -1,10 +1,10 @@
 # Vulnerability 1.1
-This vulnerability is centre around the way a hash has been created and stored.
+This vulnerability is centre around the way a hash has been created and stored. This vulnerability is an example of [insufficient cryptography].  
 
 ## Hashing
 Hashing is a process used to map data to a certain value. A hash function cannot be reversed or mapped back to its original value, and therefore cannot be considered encryption, as encryption is a two way operation (i.e. a value can be encrypted and decrypted). Read more about hashing versus encryption [here].  
 
-The PIN is passed through a hash function and then the resultant hash is stored in the file `/data/data/com.example.dvma/cache`. The same restraints still apply, as in there are 9999 possible combinations to sort through. This vulnerability is an example of [insufficient cryptography].  
+The PIN is passed through a hash function and then the resultant hash is stored in the file `/data/data/com.example.dvma/cache`. The same restraints still apply, as in there are 9999 possible combinations to sort through.  
 
 The SHA-512 hash is used to create the value found in `/data/data/com.example.dvma/cache`. [This extremely useful video] explains the SHA-512 algorithm well. Resources for programming a hash function can be found in the following:
 * [Python]
