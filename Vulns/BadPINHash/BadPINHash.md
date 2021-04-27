@@ -22,19 +22,7 @@ Make sure the hash function is using SHA-512.
 ## The Fix
 There are several ways to fix this vulnerability, the first being using a randomly generated salt and storing it securely.  
 
-Here is the code to add a salt to the algorithm:  
-
-`fun getSalt() : ByteArray {`  
-
-`  val rnd = SecureRandom()`  
-  
-`  val salt = ByteArray(16)`  
-  
-`  rnd.nextBytes(salt)`  
-  
-`  return salt`  
-  
-`}`
+Here is the code to [add a salt] to the algorithm.  
 
 The [solution can be found here].
 
@@ -44,3 +32,4 @@ The [solution can be found here].
 [This extremely useful video]: https://www.youtube.com/watch?v=DMtFhACPnTY&t=351s
 [here]: https://aboutssl.org/hashing-vs-encryption/
 [solution can be found here]: https://pl.kotl.in/5Fr98F7zB
+[add a salt]: https://pl.kotl.in/3OPg6532F
