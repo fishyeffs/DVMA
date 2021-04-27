@@ -24,10 +24,15 @@ There are several ways to fix this vulnerability, the first being using a random
 
 Here is the code to add a salt to the algorithm:
 `fun getSalt() : ByteArray {  
+
   val rnd = SecureRandom()  
+  
   val salt = ByteArray(16)  
+  
   rnd.nextBytes(salt)  
+  
   return salt  
+  
 }`
 
 The [solution can be found here].
