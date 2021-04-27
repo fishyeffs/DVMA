@@ -1,5 +1,6 @@
 # Vulnerability Walkthrough 1
 The screen that welcomes you on to the app will hopefully be familiar to you. A PIN screen is found in a large number of popular apps to secure messages and data from prying eyes.  
+
 Unfortunately, some apps do not take the time to make their PIN screens secure. Have a play with the screen and see if you can notice anything unusual compared to what you would expect.  
 
 If you found that you had unlimited attempts at entering a PIN code, you have found a vulnerable aspect to this screen. Given that you can input as many combinations as you wish, how many would you have to input in order to gain access in the worst case scenario?  
