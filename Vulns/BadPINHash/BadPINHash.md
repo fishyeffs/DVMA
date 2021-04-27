@@ -15,7 +15,7 @@ Create a program that goes through every PIN combination and hashes it using the
 
 The [solution can be found here].
 
-[insecure cryptography]: https://owasp.org/www-project-mobile-top-10/2016-risks/m5-insufficient-cryptography
+[insufficient cryptography]: https://owasp.org/www-project-mobile-top-10/2016-risks/m5-insufficient-cryptography
 [Java]: https://techexpertise.medium.com/java-cryptographic-hash-functions-a7ae28f3fa42
 [Python]: https://www.geeksforgeeks.org/sha-in-python/
 [This extremely useful video]: https://www.youtube.com/watch?v=DMtFhACPnTY&t=351s
