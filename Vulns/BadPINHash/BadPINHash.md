@@ -23,17 +23,17 @@ Make sure the hash function is using SHA-512.
 There are several ways to fix this vulnerability, the first being using a randomly generated salt and storing it securely.  
 
 Here is the code to add a salt to the algorithm:
-`fun getSalt() : ByteArray {  
+`fun getSalt() : ByteArray {`  
 
-  val rnd = SecureRandom()  
+`  val rnd = SecureRandom()`  
   
-  val salt = ByteArray(16)  
+`  val salt = ByteArray(16)`  
   
-  rnd.nextBytes(salt)  
+`  rnd.nextBytes(salt)`  
   
-  return salt  
+`  return salt`  
   
-}`
+`}`
 
 The [solution can be found here].
 
