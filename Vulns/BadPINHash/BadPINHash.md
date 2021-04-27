@@ -17,14 +17,14 @@ Create a program that goes through every PIN combination and hashes it using the
 Create an iterative loop to go through all 9999 combinations.
 
 ### Hint 2
-Make sure the hash function is using SHA-512.
+Make sure the hash function is using SHA-512.  
+
+The [solution can be found here].
 
 ## The Fix
 There are several ways to fix this vulnerability, the first being using a randomly generated salt and storing it securely.  
 
 Here is the code to [add a salt] to the algorithm.  
-
-The [solution can be found here].
 
 [insufficient cryptography]: https://owasp.org/www-project-mobile-top-10/2016-risks/m5-insufficient-cryptography
 [Java]: https://techexpertise.medium.com/java-cryptographic-hash-functions-a7ae28f3fa42
