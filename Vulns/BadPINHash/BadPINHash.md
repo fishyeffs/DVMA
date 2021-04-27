@@ -26,4 +26,4 @@ The [solution can be found here].
 [Python]: https://www.geeksforgeeks.org/sha-in-python/
 [This extremely useful video]: https://www.youtube.com/watch?v=DMtFhACPnTY&t=351s
 [here]: https://aboutssl.org/hashing-vs-encryption/
-[solution can be found here]: https://pl.kotl.in/af2PyyTrV
+[solution can be found here]: https://pl.kotl.in/5Fr98F7zB
