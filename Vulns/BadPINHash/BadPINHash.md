@@ -6,7 +6,7 @@ Hashing is a process used to map data to a certain value. A hash function cannot
 
 The PIN is passed through a hash function and then the resultant hash is stored in the file `/data/data/com.example.dvma/cache`. The same restraints still apply, as in there are 9999 possible combinations to sort through.  
 
-The SHA-512 hash is used to create the value found in `/data/data/com.example.dvma/cache`. [This extremely useful video] explains the SHA-512 algorithm well. Resources for programming a hash function can be found in the following:
+The SHA-512 hash is used to create the value found in `/data/data/com.example.dvma/cache`. The implementation of this algorithm does not use a salt. [This extremely useful video] explains the SHA-512 algorithm well. Resources for programming a hash function can be found in the following:
 * [Python]
 * [Java]
 
@@ -18,6 +18,17 @@ Create an iterative loop to go through all 9999 combinations.
 
 ### Hint 2
 Make sure the hash function is using SHA-512.
+
+## The Fix
+There are several ways to fix this vulnerability, the first being using a randomly generated salt and storing it securely.  
+
+Here is the code to add a salt to the algorithm:
+`fun getSalt() : ByteArray {  
+  val rnd = SecureRandom()  
+  val salt = ByteArray(16)  
+  rnd.nextBytes(salt)  
+  return salt  
+}`
 
 The [solution can be found here].
 
