@@ -22,7 +22,7 @@ Make sure the hash function is using SHA-512.
 The [solution can be found here].
 
 ## The Fix
-There are several ways to fix this vulnerability, the first being using a randomly generated salt and storing it securely.  
+There are several ways to fix this vulnerability, the first being using a randomly generated salt and the second is storing it securely. Typically, the SHA family of hashes aren't used to secure passwords, as they can be cracked reasonably quickly by any bruteforcing algorithm that utilises a GPU in [hash cracking]. Instead, algorithms like [BCrypt] are used for encryption using a 448 bit key and adding random garbage in.  
 
 Here is the code to [add a salt] to the algorithm.  
 
@@ -33,3 +33,5 @@ Here is the code to [add a salt] to the algorithm.
 [here]: https://aboutssl.org/hashing-vs-encryption/
 [solution can be found here]: https://pl.kotl.in/5Fr98F7zB
 [add a salt]: https://pl.kotl.in/3OPg6532F
+[hash cracking]: https://www.ethicalhackx.com/decode-password-hash-using-cpu-gpu/
+[BCrypt]: http://bcrypt.sourceforge.net/
