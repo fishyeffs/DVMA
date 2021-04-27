@@ -1,5 +1,5 @@
 # Vulnerability 1.1
-This vulnerability is centred around the way a hash has been created and stored, and is an example of [insufficient cryptography].  
+This vulnerability is contained within the PIN code login, the same as vulnerability 1. This vulnerability is centred around the way a hash has been created and stored, and is an example of [insufficient cryptography].  
 
 ## Hashing
 Hashing is a process used to map data to a certain value. A hash function cannot be reversed or mapped back to its original value, and therefore cannot be considered encryption, as encryption is a two way operation (i.e. a value can be encrypted and decrypted). Read more about hashing versus encryption [here].  
