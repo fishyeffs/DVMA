@@ -17,8 +17,14 @@ To get started with mobile application security you will need a few tools. Below
 * The reverse engineering tool [ApkTool]
 
 ## Setup Guide
-Clone this repository by heading to "VCS > Get from Version Control..."
-![VCS](/Assets/image.png)
+* Clone this repository by heading to "VCS > Get from Version Control..."  
+
+![VCS](/Assets/image.png)  
+
+* Paste the URL of this repo into the input box
+* Follow the instructions
+* Build the app on an Android device (preferably the emulator)
+* Run the app!
 
 [ApkTool]: https://ibotpeaches.github.io/Apktool/
 [image]: https://drive.google.com/file/d/1Nve1vf4GZLqoLauzNVkdBu50YUIGTvxI/view?usp=sharing
