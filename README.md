@@ -18,7 +18,7 @@ To get started with mobile application security you will need a few tools. Below
 
 ## Setup Guide
 Clone this repository by heading to "VCS > Get from Version Control..."
-![VCS]
+![VCS](/Assets/image.png)
 
 [ApkTool]: https://ibotpeaches.github.io/Apktool/
 [image]: https://drive.google.com/file/d/1Nve1vf4GZLqoLauzNVkdBu50YUIGTvxI/view?usp=sharing
