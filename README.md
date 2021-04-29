@@ -13,7 +13,7 @@ To get started with mobile application security you will need a few tools. Below
 
 ## Things you will need specific to this app:
 * The dvma.apk file
-* The [image] (.iso file) of the server the app communicates with
+* The [image] (.ova file) of the server the app communicates with
 * The reverse engineering tool [ApkTool]
 
 [ApkTool]: https://ibotpeaches.github.io/Apktool/
