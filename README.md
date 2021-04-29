@@ -23,8 +23,13 @@ To get started with mobile application security you will need a few tools. Below
 
 * Paste the URL of this repo into the input box
 * Follow the instructions
-* Build the app on an Android device (preferably the emulator)
-* Run the app!
+* Build the app on an Android device (preferably the emulator)  
+
+Now run the app and enjoy!
+
+## Vulnerabilities
+* [Vulnerability 1 - SimplePin]
 
 [ApkTool]: https://ibotpeaches.github.io/Apktool/
 [image]: https://drive.google.com/file/d/1Nve1vf4GZLqoLauzNVkdBu50YUIGTvxI/view?usp=sharing
+[Vulnerability 1 - SimplePin]: /Vulns/SimplePIN/SimplePin.md
