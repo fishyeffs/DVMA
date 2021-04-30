@@ -14,15 +14,16 @@ Here are some resources to help you:
 * [How to unlock an Android phone with the ADB]
 * [Automating ADB with Python]
 
-I strongly recommend using a scripting language like Python to brute force the PIN code.
+I strongly recommend using a scripting language like Python to brute force the PIN code.  
+[Here's the solution]
 
 ## The Fix
 While this was more an exercise for you to get comfortable with the ADB, don't allow a user to input a password an unlimited amount of times! Some PIN code screens use time outs, but if someone is determined enough they will still get in.
 
-[Here's the solution]
 
 [this]: https://twelvesec.com/2015/04/14/app-security-101-top-10-vulnerabilities/
 [Using the Android Debugging Bridge]: https://www.developer.com/mobile/android/using-android-debug-bridge/
 [How to unlock an Android phone with the ADB]: https://stackoverflow.com/questions/29072501/how-to-unlock-android-phone-through-adb
 [Automating ADB with Python]: https://amrbook.com/coding/python/automate-adb-with-python/
 [messed about with the ADB here]: https://medium.com/@drakkars/hacking-an-android-tv-in-2-minutes-7b6f29518ff3
+[Here's the solution]: /Assets/solut1on.py
