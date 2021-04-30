@@ -16,7 +16,10 @@ Here are some resources to help you:
 
 I strongly recommend using a scripting language like Python to brute force the PIN code.
 
+## The Fix
+While this was more an exercise for you to get comfortable with the ADB, don't allow a user to input a password an unlimited amount of times! Some PIN code screens use time outs, but if someone is determined enough they will still get in.
 
+[Here's the solution]
 
 [this]: https://twelvesec.com/2015/04/14/app-security-101-top-10-vulnerabilities/
 [Using the Android Debugging Bridge]: https://www.developer.com/mobile/android/using-android-debug-bridge/
