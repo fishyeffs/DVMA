@@ -43,7 +43,7 @@ class MainActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean = when (item.itemId) {
         //if menu item nav_account selected, open activity with intent
         R.id.nav_account -> {
-            if (!getSharedPreferences(PREF, MODE_PRIVATE).getBoolean(INITIALISED, false)) {
+            if (getSharedPreferences(PREF, MODE_PRIVATE).getBoolean(INITIALISED, false) == false) {
                 val intent = Intent(this, LoginActivity::class.java)
                 startActivity(intent)
             }

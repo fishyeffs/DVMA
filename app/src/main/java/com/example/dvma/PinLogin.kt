@@ -31,16 +31,19 @@ class PinLogin : AppCompatActivity() {
         val inputPIN = findViewById<EditText>(R.id.editTextPIN)
         val hashTxt = findViewById<TextView>(R.id.hash)
 
-        //initialise shared prefs
-        var sharedPref = getSharedPreferences(PREF, Context.MODE_PRIVATE)
 
-        //shared prefs editor
-        var edit = sharedPref.edit()
+        if(!File("/data/data/com.example.dvma/shared_prefs/PrefLogin.xml").exists()) {
+            //initialise shared prefs
+            var sharedPref = getSharedPreferences(PREF, Context.MODE_PRIVATE)
 
-        edit.putBoolean(INITIALISED, true)
-        edit.putString(USERNAME, "micHa1l")
-        edit.putString(PASSWORD, "busterTheDog1")
-        edit.commit()
+            //shared prefs editor
+            var edit = sharedPref.edit()
+
+            edit.putBoolean(INITIALISED, true)
+            edit.putString(USERNAME, "micHa1l")
+            edit.putString(PASSWORD, "busterTheDog1")
+            edit.commit()
+        }
 
         //if the pin file doesn't exist, encrypt a random 4 digit number and write it
         //to the file
@@ -66,6 +69,7 @@ class PinLogin : AppCompatActivity() {
                 }
                 else {
                     hashTxt.text = "it didn't work :("
+                    inputPIN.text.clear()
                 }
             }
         }

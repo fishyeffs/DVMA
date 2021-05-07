@@ -11,6 +11,7 @@ import android.widget.Toast
 
 class LoginActivity : AppCompatActivity() {
     val PREF = "PrefLogin"
+    val INITIALISED = "initialised"
     val USERNAME = "UsernamePref"
     val PASSWORD = "PasswordPref"
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,6 +26,8 @@ class LoginActivity : AppCompatActivity() {
             var sharedPref = getSharedPreferences(PREF, Context.MODE_PRIVATE)
 
             if (uname.text.toString() == sharedPref.getString(USERNAME, "") && pass.text.toString() == sharedPref.getString(PASSWORD, "")) {
+                val edit = sharedPref.edit()
+                edit.putBoolean(INITIALISED, true)
                 //calling an action rather than a destination
                 val intent = Intent("com.example.dvma.LOGIN")
 
@@ -35,6 +38,7 @@ class LoginActivity : AppCompatActivity() {
                 }
 
                 startActivity(intent)
+                startActivity(Intent(this, MainActivity::class.java))
             }
             else {
                 val duration = Toast.LENGTH_LONG

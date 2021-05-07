@@ -18,14 +18,15 @@ class AccountActivity : AppCompatActivity() {
         setContentView(R.layout.activity_account)
 
         var sharedPref = getSharedPreferences(PREF, Context.MODE_PRIVATE)
-        var edit = sharedPref.edit()
+        var editor = sharedPref.edit()
 
         val usernameTextView = findViewById<TextView>(R.id.uname)
         usernameTextView.text = sharedPref.getString(USERNAME, "")
         val sign_out = findViewById<Button>(R.id.sign_out)
 
         sign_out.setOnClickListener {
-            edit.putBoolean(INITIALISED, false)
+            editor.putBoolean(INITIALISED, false)
+            editor.apply()
             val intent = Intent(this, PinLogin::class.java)
             startActivity(intent)
         }
