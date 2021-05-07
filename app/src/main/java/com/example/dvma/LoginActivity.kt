@@ -28,6 +28,7 @@ class LoginActivity : AppCompatActivity() {
             if (uname.text.toString() == sharedPref.getString(USERNAME, "") && pass.text.toString() == sharedPref.getString(PASSWORD, "")) {
                 val edit = sharedPref.edit()
                 edit.putBoolean(INITIALISED, true)
+                edit.apply()
                 //calling an action rather than a destination
                 val intent = Intent("com.example.dvma.LOGIN")
 
