@@ -29,7 +29,11 @@ Now run the app and enjoy!
 
 ## Vulnerabilities
 * [Vulnerability 1 - SimplePin]
+* [Vulnerability 1.1 - BadPINHash]
+* More walkthroughs in the future.
+
 
 [ApkTool]: https://ibotpeaches.github.io/Apktool/
 [image]: https://drive.google.com/file/d/1Nve1vf4GZLqoLauzNVkdBu50YUIGTvxI/view?usp=sharing
 [Vulnerability 1 - SimplePin]: /Vulns/SimplePIN/SimplePin.md
+[Vulnerability 1.1 - BadPINHash]: https://github.com/fishyeffs/DVMA/blob/master/Vulns/BadPINHash/BadPINHash.md
